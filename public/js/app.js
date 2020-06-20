@@ -10,8 +10,10 @@ const messageTwo = document.querySelector('#message-2');
 weatherForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const location = search.value;
-    const  url = 'http://localhost:3001/weather?address=' + encodeURIComponent(location);
     
+    //const  url = 'http://localhost:3001/weather?address=' + encodeURIComponent(location);
+    // while running on heroku
+    const  url = '/weather?address=' + encodeURIComponent(location);
     meassageOne.textContent = 'Loading.....';
     messageTwo.textContent = '';
     

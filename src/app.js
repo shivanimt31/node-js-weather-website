@@ -6,6 +6,9 @@ const forecast = require('./utils/forecast');
 
 const app = express();
 
+// defines port for heroku server
+const port = process.env.PORT || 3000;
+
 /* Define paths for express config*/ 
 const publicDirectoryPath = path.join(__dirname, '../public');
 // path to all the hbs views by default it will look in the views folder
@@ -121,6 +124,6 @@ app.get('*', (req, res) => {
 // we can also pass an optional argument to the listen function is a callback function
 // which just runcs when the server is up and running. the process of starting up a server is 
 // an asyhchronous process
-app.listen(3001, () => {
-    console.log('Server started correctly on port 3001!!!');
+app.listen(PORT, () => {
+    console.log(`Server started correctly on port ${PORT}!!!`);
 })  
